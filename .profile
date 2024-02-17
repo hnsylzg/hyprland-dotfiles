@@ -23,7 +23,7 @@ export SHELL=/usr/bin/zsh
 #export ZEIT_DB="$HOME/.config/zeit.db"
 
 # set ozone platform to wayland
-export ELECTRON_OZONE_PLATFORM_HINT=wayland
+#export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 # Disable hardware cursors. This might fix issues with
 # disappearing cursors

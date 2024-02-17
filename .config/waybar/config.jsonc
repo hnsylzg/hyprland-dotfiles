@@ -1,8 +1,8 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/launcher","cpu","memory"],
+	"modules-left": ["custom/launcher","cpu","memory","custom/playerctl"],
 	"modules-center": ["hyprland/window","hyprland/submap","hyprland/workspaces","tray"],
-	"modules-right": ["pulseaudio","disk","network","temperature","clock"],
+	"modules-right": ["pulseaudio","disk","bluetooth","network","temperature","clock"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
@@ -21,22 +21,35 @@
       "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+	"format-ethernet": "{ipaddr}/{cidr} 󰈀",
+	"tooltip-format": "{ifname} via {gwaddr} 󰈀",
+	"format-linked": "{ifname} (No IP) 󰈀",
+	"format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
+    "bluetooth": {
+	"format": " {status}",
+	"format-disabled": "󰂲 {status}",
+	"format-connected": " {device_alias}",
+	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+	"on-click": "foot bluetuith",
+	"on-click-right": "rfkill toggle bluetooth"
+},
     "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
+	// "thermal-zone": 2,
+	// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+	"critical-threshold": 80,
+	 // "format-critical": "{tem:qperatureC}°C {icon}",
+	"format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
 	"tray":{
-		"icon-size":18,
+		"icon-size": 18,
 		"spacing": 10
 	},
     "clock": {
@@ -46,8 +59,9 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "interval": 2,
-        "tooltip": true
+	"interval": 2,
+	"on-click": "foot htop",
+	"tooltip": true
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -68,20 +82,36 @@
         },
         "on-click": "foot pulsemixer"
     },
-
+    "custom/playerctl": {
+	"interval": "once",
+	"tooltip": true,
+	"return-type": "json",
+	"format": "{icon}",
+	"format-icons": {
+            "Playing": "󰏦",
+            "Paused": "󰐍"
+        },
+	"exec": "playerctl metadata --format '{\"alt\": \"{{status}}\", \"tooltip\": \"{{playerName}}:  {{markup_escape(title)}} - {{markup_escape(artist)}}\" }'",
+	"on-click": "playerctl play-pause",
+	"on-click-right": "playerctl next",
+	"on-scroll-up": "playerctl position 10+",
+	"on-scroll-down": "playerctl position 10-",
+	"signal": 5
+    },
     "memory": {
-        "interval": 30,
-        "format": "{used:0.1f}G/{total:0.1f}G "
+	"interval": 30,
+	"format": "{used:0.1f}G/{total:0.1f}G ",
+	"on-click": "foot htop"
     },
     "disk": {
-        "interval": 30,
-        "format": "󰋊 / {percentage_free}% ",
-        "path": "/"
+	"interval": 30,
+	"format": "󰋊 / {percentage_free}% ",
+	"path": "/"
     },
     "custom/launcher":{
         "format": " ",
-        "on-click": "rofi -show combi -combi-modi 'drun,run' -show-icons",
-        "on-click-right": "killall rofi"
+	"on-click": "rofi -show combi -combi-modi 'drun,run' -show-icons",
+	"on-click-right": "killall rofi"
     }
 }
 
