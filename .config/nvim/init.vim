@@ -1,6 +1,6 @@
 "令编辑器显示行号
 set nu
-
+set clipboard+=unnamedplus
 "要安装的插件列表
 call plug#begin('~/.vim/plugged')
 "tab 键补全功能插件

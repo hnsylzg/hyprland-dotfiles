@@ -2,7 +2,7 @@
 	"layer": "top",
 	"modules-left": ["custom/launcher","cpu","memory","custom/playerctl"],
 	"modules-center": ["hyprland/window","hyprland/submap","hyprland/workspaces","tray"],
-	"modules-right": ["pulseaudio","disk","bluetooth","network","temperature","clock"],
+	"modules-right": ["custom/clipboard","pulseaudio","disk","bluetooth","network","temperature","clock"],
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
@@ -21,7 +21,7 @@
       "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-	"format-ethernet": "{ipaddr}/{cidr} 󰈀",
+	"format-ethernet": "{ipaddr} 󰈀",
 	"tooltip-format": "{ifname} via {gwaddr} 󰈀",
 	"format-linked": "{ifname} (No IP) 󰈀",
 	"format-disconnected": "Disconnected ⚠",
@@ -97,6 +97,17 @@
 	"on-scroll-up": "playerctl position 10+",
 	"on-scroll-down": "playerctl position 10-",
 	"signal": 5
+    },
+    "custom/clipboard": {
+        "format": "󰨸",
+        "interval": "once",
+        "return-type": "json",
+        "on-click": "~/.config/hypr/scripts/clipboard.sh; waybar-signal clipboard",
+        "on-click-right": "~/.config/hypr/scripts/clipboard-del.sh; waybar-signal clipboard",
+        "on-click-middle": "rm -f ~/.cache/cliphist/db; waybar-signal clipboard",
+        "exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)'",
+        "exec-if": "[ -x \"$(command -v cliphist)\" ] && [ $(cliphist list | wc -l) -gt 0 ]",
+        "signal": 9
     },
     "memory": {
 	"interval": 30,

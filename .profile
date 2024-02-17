@@ -1,9 +1,9 @@
 #!/bin/sh
 # make default editor Neovim
-export EDITOR=nvim
+#export EDITOR=nvim
 # Most pure GTK3 apps use wayland by default, but some,
 # like Firefox, need the backend to be explicitely selected.
-export MOZ_ENABLE_WAYLAND=1
+#export MOZ_ENABLE_WAYLAND=1
 #export MOZ_DBUS_REMOTE=1
 #export GTK_CSD=0
 
@@ -13,10 +13,10 @@ export MOZ_ENABLE_WAYLAND=1
 #export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
 
 #Java XWayland blank screens fix
-export _JAVA_AWT_WM_NONREPARENTING=1
+#export _JAVA_AWT_WM_NONREPARENTING=1
 
 # set default shell and terminal
-export SHELL=/usr/bin/zsh
+#export SHELL=/usr/bin/zsh
 #export TERMINAL_COMMAND=/usr/share/sway/scripts/foot.sh
 
 # add default location for zeit.db
@@ -33,15 +33,15 @@ export SHELL=/usr/bin/zsh
 #fi
 
 # Disable warnings by OpenCV
-export OPENCV_LOG_LEVEL=ERROR
+#export OPENCV_LOG_LEVEL=ERROR
 
-set -a
-. "$HOME/.config/user-dirs.dirs"
-set +a
+#set -a
+#. "$HOME/.config/user-dirs.dirs"
+#set +a
 
-if [ -n "$(ls "$HOME"/.config/profile.d 2>/dev/null)" ]; then
-    for f in "$HOME"/.config/profile.d/*; do
+#if [ -n "$(ls "$HOME"/.config/profile.d 2>/dev/null)" ]; then
+#    for f in "$HOME"/.config/profile.d/*; do
         # shellcheck source=/dev/null
-        . "$f"
-    done
-fi
+#        . "$f"
+#    done
+#fi
