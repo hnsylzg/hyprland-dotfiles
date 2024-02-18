@@ -1,1 +1,1 @@
-cliphist list | rofi -dmenu -p "Select item to delete" | cliphist delete
+cliphist list | wofi -dmenu -p "Select item to delete" | cliphist delete
