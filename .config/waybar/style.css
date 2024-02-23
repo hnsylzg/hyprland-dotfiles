@@ -1,7 +1,7 @@
 * {
 	border: none;
 	border-radius: 10;
-        font-family: Microsoft YaHei Hack;
+	font-family: monospace, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
 	font-size: 12px;
 	min-height: 10px;
 }
@@ -20,7 +20,7 @@ window#waybar.hidden {
 	margin-top: 6px;
 	margin-left: 0px;
 	padding-left: 12px;
-	padding-right: 8px;
+	padding-right: 9px;
 	margin-bottom: 0px;
 	border-radius: 10px;
 }
