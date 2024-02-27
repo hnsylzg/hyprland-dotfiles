@@ -16,10 +16,10 @@
 	],
 	"modules-right": [
 		"custom/clipboard",
+		"temperature",
 		"pulseaudio",
 		"bluetooth",
 		"network",
-		"temperature",
 		"clock"
 	],
 	"hyprland/workspaces": {

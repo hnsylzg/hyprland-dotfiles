@@ -215,8 +215,8 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #aea4d0;
+	/*background: #2d2d3a;*/
 	background: #45495c;
-	/*      background: #1A1826;*/
 }
 
 #memory {
