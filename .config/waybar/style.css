@@ -114,7 +114,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #cd79c1;
+/*	color: #cd79c1;*/
+	color: #e4bd86;
 	background: #252733;
 }
 
