@@ -277,7 +277,7 @@ window#waybar.hidden {
 #clock {
 	margin-top: 6px;
 	margin-left: 8px;
-	margin-right: 10px;
+	margin-right: 15px;
 	padding-left: 10px;
 	margin-bottom: 0px;
 	padding-right: 10px;
@@ -357,7 +357,8 @@ window#waybar.hidden {
 	margin-bottom: 0px;
 	border-radius: 10px;
 	transition: none;
-	color: #dba986;
+	color: #ffffff;
+/*	color: #dba986;*/
 }
 
 #keyboard-state {
