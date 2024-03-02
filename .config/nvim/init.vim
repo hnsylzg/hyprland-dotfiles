@@ -17,10 +17,10 @@ Plug 'kevinhwang91/rnvimr'
 Plug 'mhinz/vim-startify'
 "markdown 预览插件
 Plug 'iamcco/markdown-preview.nvim'
-"vim-snazzy 主题
+"主题
 "Plug 'connorholyday/vim-snazzy'
-"catppuccin
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+"Plug 'folke/tokyonight.nvim'
 call plug#end()
 
 "配置 vim-airline 标签栏插件
@@ -46,8 +46,11 @@ let g:mkdp_patch_to_chrome = "/usr/bin/google-chrome-stable"
 let g:mkdp_markdown_css=''
 
 lua <<EOF
+--require("tokyonight").setup {
 require("catppuccin").setup {
+	--transparent = true,
 	transparent_background = true,
 	}
+--vim.cmd.colorscheme "tokyonight"
 vim.cmd.colorscheme "catppuccin"
 EOF
