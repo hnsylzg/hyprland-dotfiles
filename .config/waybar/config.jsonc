@@ -69,7 +69,8 @@
 			"",
 			"",
 			""
-		]
+		],
+		"on-click": "$TERMINAL htop"
 	},
 	"tray": {
 		"icon-size": 18,
