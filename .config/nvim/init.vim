@@ -36,14 +36,14 @@ nnoremap <silent> <M-o> : RnvimrToggle <CR>
 nnoremap <M-=> : bp <CR>
 nnoremap <M--> : bn <CR>
 
-"配置 vim-snazzy 主题插件
-"let g:SnazzyTransparent = 1
-"colorscheme snazzy
-
 "指定浏览器路径
 let g:mkdp_patch_to_chrome = "/usr/bin/google-chrome-stable"
 "指定预览主题，默认Github
 let g:mkdp_markdown_css=''
+
+"配置 vim-snazzy 主题插件
+"let g:SnazzyTransparent = 1
+"colorscheme snazzy
 
 lua <<EOF
 --require("tokyonight").setup {

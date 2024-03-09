@@ -177,8 +177,7 @@ window#waybar.hidden {
 	animation-direction: alternate
 }
 
-#battery.charging,
-#battery.plugged {
+#battery.charging,#battery.plugged {
 	color: #7dda9f;
 }
 
