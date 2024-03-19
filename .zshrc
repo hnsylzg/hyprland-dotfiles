@@ -12,4 +12,4 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias sudo='sudo -E '
 alias ll='ls -l'
 alias la='ls -la'
-alias v='nvim
+alias v='nvim'
