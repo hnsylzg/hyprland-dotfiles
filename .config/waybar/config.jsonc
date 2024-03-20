@@ -3,35 +3,35 @@
 	"modules-left": ["custom/launcher","cpu","memory","disk","custom/playerctl","custom/playerlabel"],
 	"modules-center": ["hyprland/submap","hyprland/workspaces","tray"],
 	"modules-right": ["custom/clipboard","temperature","backlight","pulseaudio","bluetooth","network","battery","clock"],
-	"hyprland/workspaces": {
-		"format": "{icon}",
-		"on-click": "activate",
-		"format-icons": {
-			"1": " ",
-			"2": " ",
-			"3": " ",
-			"4": " ",
-			"5": " ",
-			"urgent": " ",
-			"active": " ",
-			"default": " "
-		},
-		"sort-by-number": true
-	},
+//	"hyprland/workspaces": {
+//		"format": "{icon}",
+//		"on-click": "activate",
+//		"format-icons": {
+//			"1": " ",
+//			"2": " ",
+//			"3": " ",
+//			"4": " ",
+//			"5": " ",
+//			"urgent": " ",
+//			"active": " ",
+//			"default": " "
+//		},
+//		"sort-by-number": true
+//	},
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "{essid} ({signalStrength}%) ",
-		"format-ethernet": "{ipaddr} 󰈀",
-		"tooltip-format": "{ifname} via {gwaddr} 󰈀",
-		"format-linked": "{ifname} (No IP) 󰈀",
-		"format-disconnected": "Disconnected ⚠",
+		"format-wifi": " {essid} ({signalStrength}%)",
+		"format-ethernet": "󰈀 {ipaddr}",
+		"tooltip-format": "󰈀 {ifname} via {gwaddr}",
+		"format-linked": "󰈀 {ifname} (No IP)",
+		"format-disconnected": "⚠ Disconnected",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}"
 	},
 	"bluetooth": {
-		"format": "{status} ",
-		"format-disabled": "{status} 󰂲",
-		"format-connected": "{device_alias} ",
-		"format-connected-battery": "{device_alias} {device_battery_percentage}% ",
+		"format": " {status}",
+		"format-disabled": "󰂲 {status}",
+		"format-connected": " {device_alias}",
+		"format-connected-battery": " {device_alias} {device_battery_percentage}%",
 		// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
 		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
@@ -45,13 +45,13 @@
 		// "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
 		"critical-threshold": 80,
 		// "format-critical": "{tem:qperatureC}°C {icon}",
-		"format": "{temperatureC}°C {icon}",
+		"format": "{icon} {temperatureC}°C",
 		"format-icons": ["", "", ""],
 		"on-click": "$TERMINAL htop"
 	},
 	"backlight": {
 		// "device": "acpi_video1",
-		"format": "{percent}% {icon}",
+		"format": "{icon} {percent}%",
 		"format-icons": ["", "", "", "", "", "", "", "", ""]
 	},
 	"battery": {
@@ -61,10 +61,10 @@
 			"warning": 30,
 			"critical": 15 
 		},
-		"format": "{capacity}% {icon} ",
-		"format-charging": "{capacity}% ",
-		"format-plugged": "{capacity}% ",
-		"format-alt": "{time} {icon} ",
+		"format": "{icon} {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{icon} {time}",
 		// "format-good": "", // An empty format will hide the module
 		// "format-full": "",
 		"format-icons": ["", "", "", "", ""]
@@ -74,9 +74,9 @@
 		"spacing": 10
 	},
 	"clock": {
-		"format": " {:%I:%M %p  %Y/%m/%d}",
+		"format": " {:%H:%M | %m/%d}",
  		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format-alt": " {:%I:%M %p}"
+		"format-alt": " {:%H:%M}"
 	},
 	"cpu": {
 		"format": "{usage}% 󰍛",
@@ -86,11 +86,11 @@
 	},
 	"pulseaudio": {
 		// "scroll-step": 1, // %, can be a float
-		"format": "{volume}% {icon} {format_source}",
-		"format-bluetooth": "{volume}% {icon}  {format_source}",
+		"format": "{icon} {volume}% {format_source}",
+		"format-bluetooth": "{icon}  {volume}% {format_source}",
 		"format-bluetooth-muted": "  {icon}  {format_source}",
 		"format-muted": " {format_source}",
-		"format-source": "{volume}% ",
+		"format-source": " {volume}%",
 		"format-source-muted": "",
 		"format-icons": {
 			"headphone": "",
