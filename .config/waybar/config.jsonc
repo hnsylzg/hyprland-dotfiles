@@ -20,7 +20,7 @@
 //	},
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": " {essid} ({signalStrength}%)",
+		"format-wifi": "  {essid} ({signalStrength}%)",
 		"format-ethernet": "󰈀 {ipaddr}",
 		"tooltip-format": "󰈀 {ifname} via {gwaddr}",
 		"format-linked": "󰈀 {ifname} (No IP)",
@@ -59,23 +59,23 @@
 		"states": {
 			// "good": 95,
 			"warning": 30,
-			"critical": 15 
+			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
-		"format-charging": "󰂄 {capacity}%",
+		"format": "{icon}  {capacity}%",
+		"format-charging": " {capacity}%",
 		"format-plugged": " {capacity}%",
 		"format-alt": "{icon} {time}",
 		// "format-good": "", // An empty format will hide the module
 		// "format-full": "",
 		"format-icons": ["", "", "", "", ""]
 	},
-	"tray":{
+	"tray": {
 		"icon-size": 18,
 		"spacing": 10
 	},
 	"clock": {
 		"format": " {:%H:%M | %m/%d}",
- 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"format-alt": " {:%H:%M}"
 	},
 	"cpu": {
@@ -88,14 +88,14 @@
 		// "scroll-step": 1, // %, can be a float
 		"format": "{icon} {volume}% {format_source}",
 		"format-bluetooth": "{icon}  {volume}% {format_source}",
-		"format-bluetooth-muted": "󰖁  {icon}  {format_source}",
-		"format-muted": "󰖁 {format_source}",
+		"format-bluetooth-muted": "  {icon}  {format_source}",
+		"format-muted": "  {format_source}",
 		"format-source": " {volume}%",
 		"format-source-muted": "",
 		"format-icons": {
 			"headphone": "",
-			"hands-free": "󰋎",
-			"headset": "󰋎",
+			"hands-free": "",
+			"headset": "",
 			"phone": "",
 			"portable": "",
 			"car": "",
