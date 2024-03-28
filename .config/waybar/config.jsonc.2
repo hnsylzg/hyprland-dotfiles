@@ -12,6 +12,7 @@
     "clock"
   ],
   "modules-right": [
+    "custom/clipboard",
     "pulseaudio",
     "backlight",
     "memory",
@@ -106,6 +107,17 @@
     "on-scroll-down": "mpc --quiet next",
     "smooth-scrolling-threshold":5,
     "tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
+  },
+  "custom/clipboard": {
+		"format": "󰨸",
+		"interval": "once",
+		"return-type": "json",
+		"on-click": "~/.config/hypr/scripts/clipboard.sh; waybar-signal clipboard",
+		"on-click-right": "~/.config/hypr/scripts/clipboard-del.sh; waybar-signal clipboard",
+		"on-click-middle": "rm -f ~/.cache/cliphist/db; waybar-signal clipboard",
+		"exec": "printf '{\"tooltip\":\"%s\"}' $(cliphist list | wc -l)' item(s) in the clipboard\r(Mid click to clear)'",
+		"exec-if": "[ -x \"$(command -v cliphist)\" ] && [ $(cliphist list | wc -l) -gt 0 ]",
+		"signal": 9
   },
   "network": {
     //"interval": 1,
